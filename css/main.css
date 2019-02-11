@@ -18,6 +18,9 @@ table tr:not(:first-child) td {
 }
 
 #myInput {
+    background-image: url('/css/baseline_search_black_18dp.png');
+    background-position: 3px 3px;
+    background-repeat: no-repeat;
     width: 100vw;
     font-size: 16px;
     padding: 12px 20px 12px 40px;
@@ -37,7 +40,9 @@ table tr:not(:first-child) td {
     padding: 12px;
 }
 
-
+#live-events tr.header, #live-events tr{
+    background-color: 	#33cc33;
+}
 #live-events tr.header, #live-events tr:hover {
-    background-color: #f1f1f1;
+    background-color: #80cc33;
 }
