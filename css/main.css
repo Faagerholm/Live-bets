@@ -1,0 +1,43 @@
+table, th, td {
+    border: 1px solid black;
+}
+* {
+    box-sizing: border-box;
+}
+
+table tr:first-child td {
+    min-width: 60vw; 
+    margin-left: 2rem;
+    text-align: center;
+}
+table tr:not(:first-child) td {
+    min-width: 12vw;
+}
+#live-events tr:not(:first-child) tr td{
+    text-align: center;
+}
+
+#myInput {
+    width: 100vw;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+#live-events {
+    border-collapse: collapse;
+    width: 100vw;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+#live-events th, #live-events td {
+    text-align: left;
+    padding: 12px;
+}
+
+
+#live-events tr.header, #live-events tr:hover {
+    background-color: #f1f1f1;
+}
