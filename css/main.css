@@ -30,7 +30,7 @@ table tr:not(:first-child) td {
 
 #live-events {
     border-collapse: collapse;
-    width: 100vw;
+    width: 50vw;
     border: 1px solid #ddd;
     font-size: 18px;
 }
