@@ -1,4 +1,4 @@
-
+//Jimmy on homo
 // Unibet
 var UnibetXML = new XMLHttpRequest();
 UnibetXML.open("GET", "https://eu-offering.kambicdn.org/offering/v2018/ub/listView/football/champions_league.json?lang=en_GB&market=ZZ&client_id=2&channel_id=1&ncid=1551181137308&useCombined=true", true);
