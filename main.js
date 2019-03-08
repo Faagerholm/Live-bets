@@ -1,4 +1,4 @@
-//Jimmy on homo
+
 // Unibet
 var UnibetXML = new XMLHttpRequest();
 UnibetXML.open("GET", "https://eu-offering.kambicdn.org/offering/v2018/ub/listView/football/champions_league.json?lang=en_GB&market=ZZ&client_id=2&channel_id=1&ncid=1551181137308&useCombined=true", true);
@@ -89,6 +89,53 @@ myTable.appendChild(row);
 
   }
 }
+//Betstars Premier league API
+var PokerStarsXML = new XMLHttpRequest();
+PokerStarsXML.open("GET", "https://sports.betstars.eu/sportsbook/v1/api/getCompetitionEvents?competitionId=3995089&marketTypes=MRES%2CSOCCER%3AFT%3AAXB&includeOutrights=false&channelId=6&locale=fi-fi&siteId=4096");
+PokerStarsXML.send();
+PokerStarsXML.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myTable = document.getElementById("live-events");
+    var myObj = JSON.parse(this.responseText);
+
+
+    myObj.el.forEach(element => {
+      var row = document.createElement("TR");
+      var data = document.createElement("TD");
+      console.log(element.en);
+      var data_name = document.createTextNode("BS: " + element.en + " (" + element.cn.toLowerCase() + ")");
+
+      var data_odds = document.createElement("Tr");
+      try{
+        element.ml.forEach(odds => {
+          odds.msl.forEach(odd => {
+            var innerData = document.createElement("TD");
+            var o = document.createTextNode(odd.mst);
+            var new_line = document.createElement("br");
+            var o2 = document.createTextNode((odd.msp));
+            innerData.appendChild(o);
+            innerData.appendChild(new_line);
+            innerData.appendChild(o2);
+            data_odds.appendChild(innerData);
+          });
+    });
+}
+catch(undefined){
+    data_odds.appendChild(document.createTextNode("No odds for this game"));
+}
+        
+data.appendChild(data_name);
+row.appendChild(data);
+row.appendChild(data_odds);
+myTable.appendChild(row);
+  });
+
+  }
+}
+
+
+
+
 function Search(){
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
